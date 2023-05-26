@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 header {
@@ -14,4 +15,23 @@ main {
 
 .meme-container {
   border: 1px solid red;
+}
+
+#meme-image-container {
+  position: relative;
+  width: 50%;
+  border: 1px solid blue;
+}
+
+#meme-text {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+#meme-image {
+  /* position: absolute; */
+  top: 0;
+  z-index: 1;
+  width: 100%;
 }
