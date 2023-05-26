@@ -14,9 +14,8 @@ const uploadImageToPreview = () => {
   const memeInsert = document.querySelector('#meme-insert');
   memeInsert.addEventListener('change', (event) => {
     const image = event.target.files[0];
-    console.log(event.target);
-    console.log(URL.createObjectURL(image));
     memeImage.src = URL.createObjectURL(image);
+    memeImageContainer.style.height = memeImage.style.height;
   });
 };
 
