@@ -40,9 +40,6 @@ main {
   height: 100%;
 }
 
-/* Um dos botões deve possuir o ID e deve estilizar o container da imagem com uma borda de 3 pixels, dashed e vermelha ();
-Um dos botões deve possuir o ID  deve estilizar o container da imagem com uma borda azul (), com 5 pixels do tipo double;
-Um dos botões deve possuir o ID  deve estilizar o container da imagem com uma borda do tipo groove, verde () e com 6 pixels; */
 button {
   color: white;
   padding: 5px;
@@ -53,14 +50,21 @@ button {
 }
 
 #fire {
- background-color: rgb(255, 0, 0);
+  background-color: red;
 }
 
 #water {
- background-color: rgb(0, 0, 255);
- 
+  background-color: blue;
 }
 
 #earth {
- background-color: rgb(0, 128, 0);
+  background-color: green;
+}
+
+form div img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
 }

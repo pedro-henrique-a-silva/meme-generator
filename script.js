@@ -22,28 +22,52 @@ const uploadImageToPreview = () => {
 
 const changeMemeBorder = (elementID) => {
   switch (elementID) {
-    case 'fire':
-      memeImageContainer.style.border = `3px dashed rgb(255, 0, 0)`;
-      break;
-    case 'water':
-      memeImageContainer.style.border = `5px double rgb(0, 0, 255)`;
-      break;
-    case 'earth':
-      memeImageContainer.style.border = `6px groove rgb(0, 128, 0)`;
-      break
-    default:
-      break;
+  case 'fire':
+    memeImageContainer.style.border = '3px dashed rgb(255, 0, 0)';
+    break;
+  case 'water':
+    memeImageContainer.style.border = '5px double rgb(0, 0, 255)';
+    break;
+  case 'earth':
+    memeImageContainer.style.border = '6px groove rgb(0, 128, 0)';
+    break;
+  default:
+    break;
   }
-}
+};
+
+const changeMemeFoto = (elementID) => {
+  const urlFoto = document.querySelector(`#${elementID}`).src;
+  switch (elementID) {
+  case 'meme-1':
+    memeImage.src = urlFoto;
+    break;
+  case 'meme-2':
+    memeImage.src = urlFoto;
+    break;
+  case 'meme-3':
+    memeImage.src = urlFoto;
+    break;
+  case 'meme-4':
+    memeImage.src = urlFoto;
+    break;
+  default:
+    break;
+  }
+};
 
 const buttonsEvent = () => {
   form.addEventListener('click', (event) => {
     event.preventDefault();
     if (event.target.tagName === 'BUTTON') {
-      changeMemeBorder(event.target.id)
+      changeMemeBorder(event.target.id);
     }
-  })
-}
+
+    if (event.target.tagName === 'IMG') {
+      changeMemeFoto(event.target.id);
+    }
+  });
+};
 
 escreveTextoNoMeme();
 uploadImageToPreview();
