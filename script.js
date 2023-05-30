@@ -1,6 +1,7 @@
 const inputTexto = document.querySelector('#text-input');
 const memeImageContainer = document.querySelector('#meme-image-container');
 const memeText = document.querySelector('#meme-text');
+const form = document.querySelector('form');
 
 const memeImage = document.querySelector('#meme-image');
 
@@ -19,5 +20,31 @@ const uploadImageToPreview = () => {
   });
 };
 
+const changeMemeBorder = (elementID) => {
+  switch (elementID) {
+    case 'fire':
+      memeImageContainer.style.border = `3px dashed rgb(255, 0, 0)`;
+      break;
+    case 'water':
+      memeImageContainer.style.border = `5px double rgb(0, 0, 255)`;
+      break;
+    case 'earth':
+      memeImageContainer.style.border = `6px groove rgb(0, 128, 0)`;
+      break
+    default:
+      break;
+  }
+}
+
+const buttonsEvent = () => {
+  form.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (event.target.tagName === 'BUTTON') {
+      changeMemeBorder(event.target.id)
+    }
+  })
+}
+
 escreveTextoNoMeme();
 uploadImageToPreview();
+buttonsEvent();
